@@ -272,10 +272,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(GPIOA, LED_GREEN);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
  8000236:	23a0      	movs	r3, #160	@ 0xa0
  8000238:	05db      	lsls	r3, r3, #23
- 800023a:	2100      	movs	r1, #0
+ 800023a:	2120      	movs	r1, #32
  800023c:	0018      	movs	r0, r3
  800023e:	f000 fca8 	bl	8000b92 <HAL_GPIO_TogglePin>
 	  HAL_Delay(2000);
@@ -283,7 +283,7 @@ int main(void)
  8000244:	00db      	lsls	r3, r3, #3
  8000246:	0018      	movs	r0, r3
  8000248:	f000 fa3a 	bl	80006c0 <HAL_Delay>
-	  HAL_GPIO_TogglePin(GPIOA, LED_GREEN);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
  800024c:	46c0      	nop			@ (mov r8, r8)
  800024e:	e7f2      	b.n	8000236 <main+0x16>
 
