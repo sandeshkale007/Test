@@ -5,16 +5,15 @@ on:
     branches: [ main ]
 
 jobs:
-  build-flash:
+  build:
     runs-on: self-hosted
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-    - name: Build STM32 project
+    - name: Build STM32
       run: |
-        make clean
+        cd Debug
         make
 
     - name: Make flash script executable
