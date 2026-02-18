@@ -1,0 +1,25 @@
+name: STM32 CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-flash:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build STM32 project
+      run: |
+        cd Test
+        make clean
+        make
+
+    - name: Make flash script executable
+      run: chmod +x flash.sh
+
+    - name: Flash STM32
+      run: ./flash.sh
