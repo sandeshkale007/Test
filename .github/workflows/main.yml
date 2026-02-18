@@ -14,7 +14,6 @@ jobs:
 
     - name: Build STM32 project
       run: |
-        cd Test
         make clean
         make
 
